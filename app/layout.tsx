@@ -7,8 +7,8 @@ import StairTransition from "@/components/portfolio-components/StairTransition";
 import PageTransition from "@/components/portfolio-components/PageTransition";
 
 export const metadata: Metadata = {
-  title: "Nader Saoudi | Developer",
-  description: "A portfolio website for Nader Saoudi",
+  title: "Nader SAOUDI | Developer",
+  description: "A portfolio website for Nader SAOUDI",
 };
 
 export default function RootLayout({
