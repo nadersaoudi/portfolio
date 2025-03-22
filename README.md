@@ -8,5 +8,3 @@ This is my personal portfolio built with [Next.js](https://nextjs.org/) and styl
 - Dynamic project showcase
 - Contact form integration
 - Optimized for performance and SEO
-
-## 📂 Project Structure
