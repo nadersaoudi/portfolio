@@ -1,8 +1,8 @@
 import Container from "@/components/Container";
-import HomeDescription from "@/components/portfolio-components/HomeDescription";
-import Photo from "@/components/portfolio-components/Photo";
-import SocialLink from "@/components/portfolio-components/SocialLink";
-import Statistics from "@/components/portfolio-components/Statistics";
+import HomeDescription from "@/components/portfolio-components/landing-page-components/HomeDescription";
+import Photo from "@/components/portfolio-components/landing-page-components/Photo";
+import SocialLink from "@/components/portfolio-components/landing-page-components/SocialLink";
+import Statistics from "@/components/portfolio-components/landing-page-components/Statistics";
 import { Download } from "lucide-react";
 
 export default function Home() {

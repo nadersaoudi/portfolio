@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/carousel";
 import Container from "@/components/Container";
 
-import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import projectTwo from "@/images/authencia.png";
 import projectThree from "@/images/thod.png";
@@ -71,12 +71,6 @@ const projects = [
 ];
 
 export default function ProjectSlider() {
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-
-  const handleSlideChange = (index: number) => {
-    setCurrentIndex(index);
-  };
-
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -93,12 +87,6 @@ export default function ProjectSlider() {
             loop: true,
           }}
           className="w-full"
-          onSelect={() => {
-            const index = 0;
-            if (typeof index === "number") {
-              handleSlideChange(index);
-            }
-          }}
         >
           <CarouselContent>
             {projects.map((project) => (
@@ -171,30 +159,10 @@ export default function ProjectSlider() {
             ))}
           </CarouselContent>
           <div className="absolute right-10 -bottom-8 bg-red-600">
-            <CarouselPrevious className="hidden md:flex rounded-md bg-transparent border border-lightSky/20 hover:bg-hoverColor/20 hover:text-white hover:border-hoverColor p-5 hoverEffect" />
-            <CarouselNext className="hidden md:flex rounded-md bg-transparent border border-lightSky/20 hover:bg-hoverColor/20 hover:text-white hover:border-hoverColor p-5 hoverEffect" />
+            <CarouselPrevious className=" md:flex rounded-md bg-transparent border border-lightSky/20 hover:bg-hoverColor/20 hover:text-white hover:border-hoverColor p-5 hoverEffect" />
+            <CarouselNext className=" md:flex rounded-md bg-transparent border border-lightSky/20 hover:bg-hoverColor/20 hover:text-white hover:border-hoverColor p-5 hoverEffect" />
           </div>
         </Carousel>
-        <div className="flex justify-center mt-4 md:hidden">
-          <Button
-            variant="outline"
-            size="icon"
-            className="mr-2 rounded-md bg-transparent border border-lightSky/20 hover:bg-hoverColor/20 hover:text-white hover:border-hoverColor p-5 hoverEffect"
-            onClick={() => handleSlideChange(currentIndex - 1)}
-          >
-            <ChevronLeft className="h-4 w-4" />
-            <span className="sr-only">Previous slide</span>
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className="mr-2 rounded-md bg-transparent border border-lightSky/20 hover:bg-hoverColor/20 hover:text-white hover:border-hoverColor p-5 hoverEffect"
-            onClick={() => handleSlideChange(currentIndex + 1)}
-          >
-            <ChevronRight className="h-4 w-4" />
-            <span className="sr-only">Next slide</span>
-          </Button>
-        </div>
       </Container>
     </motion.section>
   );

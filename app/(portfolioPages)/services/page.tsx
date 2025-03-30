@@ -1,7 +1,7 @@
 "use client";
 
 import Container from "@/components/Container";
-import Title from "@/components/portfolio-components/Title";
+import Title from "@/components/portfolio-components/services-components/Title";
 
 import { servicesData } from "@/constants";
 

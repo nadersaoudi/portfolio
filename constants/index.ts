@@ -33,9 +33,9 @@ export const tabContent = {
     title: "Professional Experience",
     items: [
       {
-        role: "Full Stack JS Developer",
+        role: "Full Stack Developer",
         company: "K2lis",
-        period: "2022 - Present",
+        period: "2022-Present",
         description:
           "Led the development of multiple React-based web applications, improving performance by 70%. Mentored junior developers and implemented best practices for code quality.",
         highlights: [
@@ -53,7 +53,7 @@ export const tabContent = {
       {
         role: "Full Stack Developer",
         company: "Innovant Studio",
-        period: "2021 - 2022",
+        period: "2021-2022",
         description:
           "Developed and maintained full-stack applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality solutions.",
         highlights: ["Node.js", "React", "MongoDB", "Next.js"],
@@ -61,7 +61,7 @@ export const tabContent = {
       {
         role: "Frontend Developer",
         company: "Belkif",
-        period: "Nov 2020 - Jun 2021",
+        period: "Nov 2020-Jun 2021",
         description:
           "Developed and maintained full-stack applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality solutions.",
         highlights: ["React", "Redux.js"],
@@ -69,7 +69,7 @@ export const tabContent = {
       {
         role: " Full Stack Spring Boot Angular 7 Developer",
         company: "Picosoft",
-        period: "Feb 2019 - May 2019",
+        period: "Feb 2019-May 2019",
         description:
           "Developed and maintained full-stack applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality solutions.",
         highlights: [
@@ -82,28 +82,33 @@ export const tabContent = {
       },
     ],
   },
-  education:{
-    "title": "Educational Background",
-    "items": [
+  education: {
+    title: "Educational Background",
+    items: [
       {
-        "degree": "Engineering Degree in Computer Science and Software Engineering",
-        "institution": "TEKUP, Ariana, Tunisia",
-        "period": "2024",
-        "description": "Pursuing an engineering degree in computer science and software engineering."
+        degree:
+          "Engineering Degree in Computer Science and Software Engineering",
+        institution: "TEKUP, Ariana, Tunisia",
+        period: "2024",
+        description:
+          "Pursuing an engineering degree in computer science and software engineering.",
       },
       {
-        "degree": "Bachelor’s Degree in Computer Science and Communication Technology",
-        "institution": "Faculty of Sciences of Bizerte, Tunisia",
-        "period": "2015 - 2019",
-        "description": "Acquired expertise in computer science and communication technology."
+        degree:
+          "Bachelor’s Degree in Computer Science and Communication Technology",
+        institution: "Faculty of Sciences of Bizerte, Tunisia",
+        period: "2015-2019",
+        description:
+          "Acquired expertise in computer science and communication technology.",
       },
       {
-        "degree": "High School Diploma in Computer Science",
-        "institution": "Ain Draham Secondary School, Tunisia",
-        "period": "2014 - 2015",
-        "description": "Completed secondary education specializing in computer science."
-      }
-    ]
+        degree: "High School Diploma in Computer Science",
+        institution: "Ain Draham Secondary School, Tunisia",
+        period: "2014-2015",
+        description:
+          "Completed secondary education specializing in computer science.",
+      },
+    ],
   },
 
   skills: {

@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import Logo from "./Logo";
 import { NavbarLinks } from "@/constants";
 import Link from "next/link";
-import SocialLink from "./SocialLink";
+import SocialLink from "./landing-page-components/SocialLink";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
 interface SidebarProps {

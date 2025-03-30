@@ -1,6 +1,6 @@
 import React from "react";
 
-import ContactForm from "@/components/portfolio-components/ContactForm";
+import ContactForm from "@/components/portfolio-components/contact-components/ContactForm";
 
 import Container from "@/components/Container";
 

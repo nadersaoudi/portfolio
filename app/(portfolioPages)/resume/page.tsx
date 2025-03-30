@@ -30,17 +30,17 @@ export default function ResumePage() {
         >
           <Tabs
             defaultValue="experience"
-            className="w-full flex flex-col md:flex-row gap-6 md:gap-10"
+            className="w-full flex  flex-col md:flex-row gap-6 md:gap-10"
           >
-            <TabsList className="flex md:flex-col h-full bg-transparent md:w-64 gap-4">
+            <TabsList className=" h-full flex flex-col bg-transparent md:w-64 gap-2 md:gap-4">
               {tabMenu.map((item) => (
                 <TabsTrigger
                   key={item.value}
                   value={item.value}
-                  className="bg-white/10 w-full py-2.5 text-white data-[sate-=active]:bg-hoverColor] hover:bg-lightSky/50 text-xs sm:text-sm rounded-[5px]"
+                  className="bg-white/10  w-full py-2.5 text-white data-[sate-=active]:bg-hoverColor] hover:bg-lightSky/50 text-xs sm:text-sm rounded-[5px]"
                 >
-                  <div className="flex items-center gap-1.5 md:w-[50%] md:gap-3">
-                    <item.icon className="w-4 h-4 md:h-5 md:w-5" />
+                  <div className="flex  items-center gap-1.5 md:w-[50%] md:gap-3">
+                    <item.icon className="w-3 h-3 md:h-5 md:w-5" />
                     {item.title}
                   </div>
                 </TabsTrigger>
@@ -51,7 +51,7 @@ export default function ResumePage() {
                 <motion.h2
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-2xl font-bold mb-6 text-lightSky"
+                  className="text-md md:text-2xl md:font-bold mb-6 text-lightSky"
                 >
                   {tabContent.experience.title}
                 </motion.h2>
@@ -62,25 +62,31 @@ export default function ResumePage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="border rounded-lg border-lightSky/20 bg-lightSky/20 p-6"
+                      className="border rounded-lg border-lightSky/20 bg-lightSky/20 p-2 md:p-6"
                     >
-                      <div className="flex justify-between items-start mb-4">
+                      <div className="flex justify-between gap-3 w-full items-start mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold">{item.role}</h3>
-                          <p className="text-muted-foreground">
+                          <h3 className="text-[10px] md:text-lg md:font-semibold">
+                            {item.role}
+                          </h3>
+                          <p className="text-muted-foreground text-[9px] md:text-sm">
                             {item.company}
                           </p>
                         </div>
-                        <div className="flex items-center text-muted-foreground">
-                          <Calendar className="h-4 w-4 mr-2" />
-                          {item.period}
+                        <div className="w-2/3 flex items-center justify-end text-muted-foreground">
+                          <Calendar className="md:h-4 md:w-4 w-3 h-3 mr-2" />
+                          <span className="text-[8px] md:text-xs">
+                            {item.period}
+                          </span>
                         </div>
                       </div>
-                      <p className="mb-4">{item.description}</p>
+                      <p className="mb-4 text-xs md:text-sm font-normal leading-7">
+                        {item.description}
+                      </p>
                       <div className="flex flex-wrap gap-2">
                         {item.highlights.map((highlight, i) => (
                           <Badge key={i} variant="secondary">
-                            {highlight}
+                            <span className="text-[10px]">{highlight}</span>
                           </Badge>
                         ))}
                       </div>
@@ -92,7 +98,7 @@ export default function ResumePage() {
                 <motion.h2
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-2xl font-bold mb-6 text-lightSky"
+                  className="text-md md:text-2xl md:font-bold mb-6 text-lightSky"
                 >
                   {tabContent.education.title}
                 </motion.h2>
@@ -103,23 +109,27 @@ export default function ResumePage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="border rounded-lg border-lightSky/20 bg-lightSky/20  p-6"
+                      className="border rounded-lg border-lightSky/20 bg-lightSky/20 p-2 md:p-6"
                     >
                       <div className="flex justify-between gap-10 items-start mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold">
+                          <h3 className="text-[10px] md:text-lg md:font-semibold">
                             {item.degree}
                           </h3>
-                          <p className="text-muted-foreground">
+                          <p className="text-muted-foreground text-[10px] md:text-sm">
                             {item.institution}
                           </p>
                         </div>
-                        <div className="flex items-center text-muted-foreground w-40 justify-end">
-                          <Calendar className="h-4 w-4 mr-2" />
-                          {item.period}
+                        <div className="w-2/3 flex items-center justify-end text-muted-foreground">
+                          <Calendar className="md:h-4 md:w-4 w-3 h-3 mr-2" />
+                          <span className="text-[8px] md:text-xs">
+                            {item.period}
+                          </span>
                         </div>
                       </div>
-                      <p className="mb-4">{item.description}</p>
+                      <p className="mb-4 text-[10px] md:text-sm">
+                        {item.description}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -128,7 +138,7 @@ export default function ResumePage() {
                 <motion.h2
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-2xl font-bold mb-6 text-lightSky"
+                  className="text-md md:text-2xl md:font-bold mb-6 text-lightSky"
                 >
                   {tabContent.skills.title}
                 </motion.h2>
@@ -141,16 +151,16 @@ export default function ResumePage() {
                       transition={{ delay: index * 0.1 }}
                       className="border rounded-lg border-lightSky/20 bg-lightSky/20  p-6"
                     >
-                      <h3 className="text-lg font-semibold mb-4">
+                      <h3 className="text-[xs] md:text-lg md:font-semibold">
                         {category.name}
                       </h3>
-                      <p className="text-sm text-white/60 mb-4 font-normal leading-7">
+                      <p className="text-[11px] md:text-sm text-white/60 mb-4 font-normal leading-7">
                         {category.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {category.skills.map((skill, i) => (
                           <Badge key={i} variant="secondary">
-                            {skill}
+                            <span className="md:text-sm text-xs">{skill}</span>
                           </Badge>
                         ))}
                       </div>
@@ -162,7 +172,7 @@ export default function ResumePage() {
                 <motion.h2
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-2xl font-bold mb-6 text-lightSky"
+                  className="text-md md:text-2xl md:font-bold mb-6 text-lightSky"
                 >
                   {tabContent.about.title}
                 </motion.h2>
@@ -171,10 +181,14 @@ export default function ResumePage() {
                   animate={{ opacity: 1, y: 0 }}
                   className="border rounded-lg border-lightSky/20 bg-lightSky/20 p-6"
                 >
-                  <p className="mb-6 text-lg">{tabContent.about.bio}</p>
+                  <p className="mb-6 text-sm md:text-lg">
+                    {tabContent.about.bio}
+                  </p>
                   <div className="space-y-4">
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">Interests</h3>
+                      <h3 className="text-sm md:text-lg font-semibold mb-2">
+                        Interests
+                      </h3>
                       <div className="flex flex-wrap gap-2">
                         {tabContent.about.interests.map((interest, i) => (
                           <Badge key={i} variant="secondary">
@@ -184,7 +198,9 @@ export default function ResumePage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">Languages</h3>
+                      <h3 className="text-sm md:text-lg font-semibold mb-2">
+                        Languages
+                      </h3>
                       <div className="flex flex-wrap gap-2">
                         {tabContent.about.languages.map((language, i) => (
                           <Badge key={i} variant="secondary">

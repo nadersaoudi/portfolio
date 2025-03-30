@@ -50,45 +50,44 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
 
-    if (
-      !formData.Name.trim() ||
-      !formData.Email.trim() ||
-      !formData.Message.trim()
-    ) {
+    if (!formData.Name.trim() || !formData.Email.trim()) {
       toast({
-        title: "Error",
-        description: "Please enter your name, email, and message.",
+        title: "Error: Something is wrong",
+        description: "Please input your name and email to continue",
         variant: "destructive",
       });
       return;
     }
+    const form = new FormData();
+    const currentDateTime = new Date().toLocaleString();
+    form.append("Name", formData.Name);
+    form.append("Email", formData.Email);
+    form.append("Phone", formData.Phone);
+    form.append("Address", formData.Address);
+    form.append("Message", formData.Message);
+    form.append("Service", formData.Service);
+    form.append("DateTime", currentDateTime);
 
     try {
       setLoading(true);
-
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      toast({
+        title: "Message sending limit is finished",
+        description:
+          "You have finished 50/50 message sent limit from getform. Please enable pro mode to continue",
       });
-
-      const data = await response.json();
+      const response = await fetch("https://getform.io/f/adrnmzka", {
+        method: "POST",
+        body: form,
+      });
 
       if (response.ok) {
         setSuccess(true);
         setStatus("Success! Your message has been sent.");
-        toast({
-          title: "Success",
-          description: "Your message has been sent successfully!",
-          variant: "default",
-        });
-
-        // Reset form
         setFormData({
           Name: "",
           Email: "",
@@ -99,20 +98,10 @@ const ContactForm = () => {
         });
       } else {
         setStatus("Error! Unable to send your message.");
-        toast({
-          title: "Error",
-          description: data.error || "Failed to send message.",
-          variant: "destructive",
-        });
       }
     } catch (error) {
       console.error("Error!", error);
       setStatus("Error! Something went wrong.");
-      toast({
-        title: "Error",
-        description: "Something went wrong while sending your message.",
-        variant: "destructive",
-      });
     } finally {
       setLoading(false);
     }
